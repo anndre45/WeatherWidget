@@ -19,11 +19,11 @@ def main(page: Page):
 
     def _expand(e):
         if e.data == "true":
-            _c.content.controls[1].height = 540
-            _c.content.controls[1].update()
+            _c.content.controls[0].height = 540
+            _c.content.controls[0].update()
         else:
-            _c.content.controls[1].height = 640 * 0.40
-            _c.content.controls[1].update()
+            _c.content.controls[0].height = 640 * 0.40
+            _c.content.controls[0].update()
 
     def _current_temp():
 
@@ -43,13 +43,13 @@ def main(page: Page):
             [
                int(_current.json()["visibility"] / 1000 ),
                "Km",
-               "Visibilidade",
+               "Visibility",
                "./src/visibility.png"
             ],
             [
                round(_current.json()["main"]["pressure"] * 0.03 , 2 ),
                "inHg",
-               "Pressão",
+               "Pressure",
                "./src/barometer.png"
             ],
             [
@@ -57,7 +57,7 @@ def main(page: Page):
                    _current.json()["sys"]["sunrise"]
                ).strftime("%I:%M %p"),
                "",
-               "Nascer do Sol",
+               "Sunrise",
                "./src/sunrise.png"
             ],
             [
@@ -65,7 +65,7 @@ def main(page: Page):
                    _current.json()["sys"]["sunset"]
                ).strftime("%I:%M %p"),
                "",
-               "Pôr do Sol",
+               "Sunset",
                "./src/sunset.png"
             ]
         ]
@@ -235,7 +235,7 @@ def main(page: Page):
                                             size=11,
                                         ),
                                         Text(
-                                            "Vento",
+                                            "Wind",
                                             size=9,
                                             color="white54"
                                         )
@@ -259,7 +259,7 @@ def main(page: Page):
                                             size=11,
                                         ),
                                         Text(
-                                            "Umidade",
+                                            "Humidity",
                                             size=9,
                                             color="white54"
                                         )
@@ -283,7 +283,7 @@ def main(page: Page):
                                             size=11,
                                         ),
                                         Text(
-                                            "Sensação",
+                                            "Feels Like",
                                             size=9,
                                             color="white54"
                                         )
