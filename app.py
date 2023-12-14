@@ -6,8 +6,9 @@ import flet
 from flet import *
 import requests
 import datetime
+from secret import secret
 
-api_key = "02608d0c640f79e11cdbfb06ff277e63"
+api_key = secret.api_key
 
 _current = requests.get(
     f"https://api.openweathermap.org/data/2.5/weather?lat=-19.912998&lon=-43.940933&exclude=minutely,hourly,alert&units=metric&appid={api_key}&lang=pt_br"
